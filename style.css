@@ -23,6 +23,13 @@ h1 {
 
 label {
     font-weight: bold;
+    padding: 10px;
+    font-size: 16px;
+    opacity: 0.8;
+}
+
+.keypairinput {
+padding: 8px;
 }
 
 input {

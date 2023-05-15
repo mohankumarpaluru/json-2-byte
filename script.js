@@ -9,19 +9,20 @@ form.addEventListener('submit', (event) => {
     alert('Please enter a valid Base64 encoded JSON.');
     return;
   }
-  
   try {
     const decodedJson = atob(encodedJson);
     const jsonData = JSON.parse(decodedJson);
 
     let jsonHtml = '';
+    let keyCount = 0;
     for (const [key, value] of Object.entries(jsonData)) {
-      // jsonHtml += `<label for="${key}">${key}:</label><br>`;
-      // jsonHtml += `<input type="text" name="${key}" id="${key}" value="${value}"><br>`
-      jsonHtml += `<label for="${key}">key:</label><br>`;
-      jsonHtml += `<input type="text" name="${key}" id="${key}" value="${key}"><br>`;
-      jsonHtml += `<label for="${value}">value:</label><br>`;
-      jsonHtml += `<input type="text" name="${value}" id="${value}" value="${value}"><br>`;      
+      jsonHtml += `<div class='keypairinput'>`
+      jsonHtml += `<label for="KEY_${keyCount}">KEY_${keyCount}:</label>`;
+      jsonHtml += `<input type="text" name="KEY_${keyCount}" id="KEY_${keyCount}:" value="${key}">`;
+      jsonHtml += `<label for="VALUE_${keyCount}">VALUE_${keyCount}:</label>`;
+      jsonHtml += `<input type="text" name="VALUE_${keyCount}" id="VALUE_${keyCount}" value="${value}"><br>`;
+      jsonHtml += `</div>`
+      keyCount++;
     }
 
     output.innerHTML = `
@@ -38,7 +39,13 @@ form.addEventListener('submit', (event) => {
       event.preventDefault();
       const newData = {};
       for (const [key, value] of new FormData(editorForm).entries()) {
-        newData[key] = value;
+        if (key.startsWith("KEY_")) {
+          var valValue = value;
+          newData[value] = '';
+        }
+        else if(key.startsWith("VALUE_")) {
+          newData[valValue] = value;
+        }
       }
       const newJsonData = JSON.stringify(newData);
       const newEncodedJson = btoa(newJsonData);
