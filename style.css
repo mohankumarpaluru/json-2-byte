@@ -29,7 +29,7 @@ label {
 }
 
 .keypairinput {
-padding: 8px;
+    padding: 8px;
 }
 
 input {
@@ -47,7 +47,7 @@ input:focus {
     background-color: var(--light-bg-focus-color);
     transform: scale(1.05);
     border-radius: 25px;
-    box-shadow: 13px 13px 100px var(--light-box-shadow-1),
+    box-shadow: 13px 13px 100px var(--light-box-shadow-2),
         -13px -13px 100px var(--light-box-shadow-2);
 }
 
@@ -68,13 +68,14 @@ input[type="submit"] {
     display: block;
     font-weight: 400;
     text-align: center;
-    background-color: var(--light-text-color);
+    /* background-color: var(--light-text-color); */
     border: 1px transparent;
-    padding: 5.5px 9.5px;
+    padding: 5.5px 15px;
     font-size: 16px;
+    font-weight: bold;
     line-height: 1.5;
     border-radius: 12px;
-    color: #f9d8cf;
+    color: var(--light-text-color);
     box-shadow: 7px 7px 11px var(--light-box-shadow-1),
         -7px -7px 11px var(--light-box-shadow-2);
     transition: color 150ms ease-in-out, background-color 150ms ease-in-out, border-color 150ms ease-in-out, box-shadow 150ms ease-in-out;
@@ -82,9 +83,11 @@ input[type="submit"] {
 
 input[type="submit"]:hover {
     transform: translateY(-5px);
-    color: white;
-    box-shadow: insert 7px 7px 16px #82716c,
-        insert -7px -7px 16px #ebdbd6;
+    /* color: white; */
+    background: #e9cac1;
+    box-shadow: inset 20px 20px 60px #c6aca4,
+        inset -20px -20px 60px #ffe8de;
+
 }
 
 
@@ -118,3 +121,43 @@ input[type="submit"]:hover {
     box-shadow: inset 2px 2px 5px var(--light-box-shadow-1),
         inset -3px -3px 7px var(--light-box-shadow-2), none;
 }
+
+button.remove-btn {
+    border-radius: 8px;
+    line-height: 0;
+    width: 32px;
+    height: 32px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 8px;
+    font-size: 19.2px;
+}
+
+button.remove-btn .icon {
+    margin-right: 0;
+}
+
+button {
+    font-weight: bold;
+    border-radius: 12px;
+    background: #e9cac1;
+    border: none;
+    box-shadow:  6px 6px 11px #baa29a,
+                 -6px -6px 11px #fff2e8;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+button:hover {
+    box-shadow: -2px -2px 5px #baa29a, 2px 2px 5px #baa29a;
+}
+
+button:active {
+    box-shadow: inset 1px 1px 2px #babecc, inset -1px -1px 2px #fff;
+}
+
+ion-icon {
+    color: var(--light-text-color);
+  }
