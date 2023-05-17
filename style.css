@@ -175,7 +175,9 @@ ion-icon {
 }
 .encode-btn-section{
     display: flex;
-    justify-content: center;
+    justify-content: center;    
+    margin-top: 15px;
+
 }
 #add-btn{
     margin-right: 10px;
@@ -185,4 +187,7 @@ ion-icon {
 .add-kv-icon{
     margin-right: 5px;
     margin-top: -1px;
+}
+#decode-btn{
+    margin: auto;
 }

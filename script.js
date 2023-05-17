@@ -1,7 +1,7 @@
 const form = document.querySelector("#json-form");
 const input = document.querySelector("#byte64-input");
 const output = document.querySelector("#json-output");
-output.style.display="none";
+output.style.display = "none";
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -32,8 +32,7 @@ form.addEventListener("submit", (e) => {
       <h2>JSON Editor</h2>
       <form id="json-editor-form">
         ${html}
-        <br>
-        <div class="row encode-btn-section">
+        <div id="encode-btn-section" class="row encode-btn-section">
         <button type="button" id="add-btn">
         <ion-icon class="add-kv-icon" name="add-circle-sharp"></ion-icon> Add Key-Value Pair</button>
         <input type="submit" value="Encode">
@@ -42,9 +41,9 @@ form.addEventListener("submit", (e) => {
     `;
 
     const editorForm = document.querySelector("#json-editor-form");
-    const addBtn = document.querySelector("#add-btn");
+    const addBtn = document.querySelector("#encode-btn-section");
     let nextId = id;
-
+    output.style.display = "";
     addBtn.addEventListener("click", () => {
       const keyPairInput = document.createElement("div");
       keyPairInput.classList.add("keypairinput");
@@ -60,7 +59,6 @@ form.addEventListener("submit", (e) => {
       editorForm.insertBefore(keyPairInput, addBtn);
       nextId++;
     });
-    output.style.display="";
     output.addEventListener("click", (e) => {
       if (e.target.classList.contains("remove-btn")) {
         const keypairId = e.target.dataset.keypairId;
