@@ -30,6 +30,8 @@ label {
 
 .keypairinput {
     padding: 8px;
+    display: flex;
+    align-items: center;
 }
 
 input {
@@ -44,7 +46,7 @@ input {
 }
 
 input:focus {
-    background-color: var(--light-bg-focus-color);
+    /* background-color: var(--light-bg-focus-color); */
     transform: scale(1.05);
     border-radius: 25px;
     box-shadow: 13px 13px 100px var(--light-box-shadow-2),
@@ -82,11 +84,11 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-    transform: translateY(-5px);
+    /* transform: translateY(-5px); */
     /* color: white; */
-    background: #e9cac1;
-    box-shadow: inset 20px 20px 60px #c6aca4,
-        inset -20px -20px 60px #ffe8de;
+    /* background: #e9cac1; */
+    box-shadow: -2px -2px 5px #baa29a, 2px 2px 5px #baa29a;
+
 
 }
 
@@ -161,3 +163,26 @@ button:active {
 ion-icon {
     color: var(--light-text-color);
   }
+#json-form, #json-output{
+    width: 600px;
+    /* border: 2px solid black; */
+    margin: auto;
+    padding: 20px;
+    border-radius: 18px;
+    box-shadow:  -10px 10px 9px #d9bcb3,
+                 10px -10px 9px #f9d8cf;
+    margin-bottom: 20px;
+}
+.encode-btn-section{
+    display: flex;
+    justify-content: center;
+}
+#add-btn{
+    margin-right: 10px;
+    align-items: center;
+    display: flex;
+}
+.add-kv-icon{
+    margin-right: 5px;
+    margin-top: -1px;
+}
